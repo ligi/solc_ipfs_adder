@@ -1,0 +1,12 @@
+#!/bin/bash
+
+while true
+do
+ result="$(git -C ~/git/solc-bin pull)"
+ if [[ $result == Already\ up-to-date\. ]]; then
+   echo "up to date"
+ else
+   ipfs add -r ~/git/solc-bin
+ fi
+ sleep 42
+done
